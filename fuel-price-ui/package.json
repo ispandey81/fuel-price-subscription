@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "vue": "^3.2.41",
-    "vuetify": "^3.0.2"
+    "vuetify": "^3.0.2",
+    "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@mdi/js": "^7.0.96",
