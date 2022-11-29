@@ -2,6 +2,7 @@
 export default {
   data: () => ({
     text: "Form is valid.",
+    BASE_SERVICE_URL: "https://fuel-price-service.onrender.com/",
     form_submitted: false,
     form_data: {},
     valid: true,
@@ -444,11 +445,28 @@ export default {
         email: this.email,
         suburb: this.suburb,
       };
-      this.$refs.form.reset();
+      fetch(this.BASE_SERVICE_URL + "addSubscription", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          product: this.select.value,
+          email: this.email,
+          suburb: this.suburb,
+        }),
+      })
+        .then((data) => {
+          console.log("Success:", data);
+          this.$refs.form.reset();
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
     },
     unsubscribe() {
       this.$router.push("/unsubscribe");
-    }
+    },
   },
 };
 </script>
@@ -469,6 +487,16 @@ export default {
             </p>
             <p>
               <strong>Email - {{ form_data.email }}</strong>
+            </p>
+            <br />
+            <p>
+              <strong>
+                <i
+                  >If you think the subscription details are incorrect. Please
+                  unsubscribe and create a new subscription with correct
+                  details.</i
+                >
+              </strong>
             </p>
           </v-card-text>
           <v-card-actions>
@@ -499,7 +527,7 @@ export default {
       clearable
       label="Suburb"
       hint="Type the first few letters of your suburb and select the appropriate one from the list"
-      persistent-hint="true"
+      persistent-hint
       :items="suburbs"
       :rules="[(v) => !!v || 'Suburb is required']"
     ></v-autocomplete>
