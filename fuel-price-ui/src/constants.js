@@ -1,1 +1,1 @@
-export const BASE_SERVICE_URL = "http://fuel-price-service.up.railway.app/";
+export const BASE_SERVICE_URL = "https://fuel-price-service.up.railway.app/";
