@@ -77,7 +77,7 @@ export default {
 </script>
 <template>
   <template v-if="form_submitted && subscriptions.length === 0">
-    <v-alert closable text="No subscriptions found" color="error"></v-alert>
+    <v-alert text="No subscriptions found" color="error"></v-alert>
     <br />
     <br />
   </template>
@@ -89,8 +89,11 @@ export default {
       v-model="email"
       :rules="emailRules"
       label="E-mail"
+      hint="Provide the email used for creating the subscription"
+      persistent-hint
       required
     ></v-text-field>
+    <br />
 
     <v-btn color="success" class="mr-4" @click="submit" :disabled="!valid">
       Unsubscribe
