@@ -1,8 +1,8 @@
 <script>
+import { BASE_SERVICE_URL } from "../constants";
 export default {
   data: () => ({
     text: "Form is valid.",
-    BASE_SERVICE_URL: "https://fuel-price-service.onrender.com/",
     form_submitted: false,
     form_data: {},
     valid: true,
@@ -445,7 +445,7 @@ export default {
         email: this.email,
         suburb: this.suburb,
       };
-      fetch(this.BASE_SERVICE_URL + "addSubscription", {
+      fetch(BASE_SERVICE_URL + "addSubscription", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -456,13 +456,10 @@ export default {
           suburb: this.suburb,
         }),
       })
-        .then((data) => {
-          console.log("Success:", data);
+        .then(() => {
           this.$refs.form.reset();
         })
-        .catch((error) => {
-          console.error("Error:", error);
-        });
+        .catch(() => {});
     },
     unsubscribe() {
       this.$router.push("/unsubscribe");
@@ -551,4 +548,13 @@ export default {
   <v-btn color="error" block @click="unsubscribe">
     Click here to unsubscribe
   </v-btn>
+  <br />
+  <br />
+  <v-expansion-panels>
+    <v-expansion-panel
+      title="How it works?"
+      text="Once you subscribe, you will receive an email everyday after 2.30PM containing prices for today and tomorrow for your nominated suburb and fuel type. You can create multiple subscriptions for different fuel types and suburbs."
+    >
+    </v-expansion-panel>
+  </v-expansion-panels>
 </template>
