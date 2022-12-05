@@ -553,7 +553,7 @@ export default {
   <v-expansion-panels>
     <v-expansion-panel
       title="How it works?"
-      text="Once you subscribe, you will receive an email everyday after 2.30PM containing prices for today and tomorrow for your nominated suburb and fuel type. You can create multiple subscriptions for different fuel types and suburbs."
+      text="Once you subscribe, you will receive an email everyday after 2.30PM containing prices for today and tomorrow for your nominated suburb (and surrounding suburbs) and fuel type. You can create multiple subscriptions for different fuel types and suburbs. Source of fuel prices - https://www.fuelwatch.wa.gov.au/. The list of suburbs is taken from - https://www0.landgate.wa.gov.au/maps-and-imagery/wa-geographic-names/name-history/historical-suburb-names"
     >
     </v-expansion-panel>
   </v-expansion-panels>
