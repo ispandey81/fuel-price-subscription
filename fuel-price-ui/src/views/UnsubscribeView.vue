@@ -76,6 +76,8 @@ export default {
 };
 </script>
 <template>
+  <h2><strong>Unsubscribe from daily emails</strong></h2>
+  <br />
   <template v-if="form_submitted && subscriptions.length === 0">
     <v-alert text="No subscriptions found" color="error"></v-alert>
     <br />

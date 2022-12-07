@@ -469,6 +469,8 @@ export default {
 </script>
 
 <template>
+  <h2><strong>Fuel price for metropolitan suburbs</strong></h2>
+  <br />
   <v-form ref="form" v-model="valid" lazy-validation>
     <div class="text-center">
       <v-dialog v-model="form_submitted" style="max-width: 640px">
@@ -553,8 +555,20 @@ export default {
   <v-expansion-panels>
     <v-expansion-panel
       title="How it works?"
-      text="Once you subscribe, you will receive an email everyday after 2.30PM containing prices for today and tomorrow for your nominated suburb (and surrounding suburbs) and fuel type. You can create multiple subscriptions for different fuel types and suburbs. Source of fuel prices - https://www.fuelwatch.wa.gov.au/. The list of suburbs is taken from - https://www0.landgate.wa.gov.au/maps-and-imagery/wa-geographic-names/name-history/historical-suburb-names"
+      text="Once you subscribe, you will receive an email everyday after 2.30PM containing prices for today and tomorrow for your nominated suburb (and surrounding suburbs) and fuel type. You can create multiple subscriptions for different fuel types and suburbs."
     >
+      <div class="text-center">
+        <a href="https://www.fuelwatch.wa.gov.au/" target="_blank"
+          >Source of fuel prices</a
+        >
+      </div>
+      <div class="text-center">
+        <a
+          href="https://www0.landgate.wa.gov.au/maps-and-imagery/wa-geographic-names/name-history/historical-suburb-names"
+          target="_blank"
+          >Source of suburbs</a
+        >
+      </div>
     </v-expansion-panel>
   </v-expansion-panels>
 </template>
